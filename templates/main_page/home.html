@@ -1,0 +1,15 @@
+{%extends 'main_page/layout.html'%}
+
+{%block content%}
+<div class="features">
+    <h1>DOCTORS:</h1>
+        <ul>
+            {% for doctor in doctors %}
+            <li>
+               <a href="{% url 'doctor_detail' doctor.pk %}"><h4>{{doctor.name}}</h4></a>
+               <p>{{doctor.specialization}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+</div>
+{%endblock%}

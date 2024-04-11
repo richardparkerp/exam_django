@@ -1,0 +1,22 @@
+{% extends 'main_page/layout.html' %}
+
+{% block content %}
+<div class="features">
+    <h1>{{doctor.name}}</h1>
+    <ul>
+        <li>
+            <h5>{{doctor.specialization}}</h5>
+            <p>{{doctor.experience}}</p>
+            <p>{{doctor.address}}</p>
+            <p>{{doctor.phone}}</p>
+            <form method="post" class="container">
+                {% csrf_token %}
+                {{form}}
+                <button class="btn btn-primary" type="submit"><i class="fas fa-plus-circle">Create Appointment</i></button>
+            </form>
+
+
+        </li>
+    </ul>
+</div>
+{% endblock %}
